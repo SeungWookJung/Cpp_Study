@@ -1,14 +1,25 @@
-ï»¿#include "LinkedList.h"
+#include "LinkedList.h"
 #include <iostream>
 
 using namespace std;
 
 LinkedList::LinkedList()
 	:m_header(nullptr)
-	,m_end(nullptr)
-	,m_length(0)
+	, m_end(nullptr)
+	, m_length(0)
 {
 }
+
+LinkedList::LinkedList(const LinkedList& indata)
+{
+	Node* temp = m_header;
+}
+
+//LinkedList& operator=(const LinkedList& indata)
+//{
+
+//}
+
 LinkedList::~LinkedList()
 {
 
@@ -16,7 +27,7 @@ LinkedList::~LinkedList()
 
 void LinkedList::PushBack(int num)
 {
-	if (m_header == nullptr) //ë¦¬ìŠ¤íŠ¸ê°€ ë¹ˆ ê²½ìš°
+	if (m_header == nullptr) //¸®½ºÆ®°¡ ºó °æ¿ì
 	{
 		Node* temp = nullptr;
 		temp = new Node;
@@ -27,9 +38,9 @@ void LinkedList::PushBack(int num)
 
 		m_header = temp;
 		m_length++;
-		
+
 	}
-	else if (m_length > 0) //ë¦¬ìŠ¤íŠ¸ê°€ ë¹„ì–´ìˆì§€ ì•Šì€ ê²½ìš°
+	else if (m_length > 0) //¸®½ºÆ®°¡ ºñ¾îÀÖÁö ¾ÊÀº °æ¿ì
 	{
 		Node* iter = nullptr;
 		Node* temp = new Node;

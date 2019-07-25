@@ -1,20 +1,22 @@
 #pragma once
-
 #include "Node.h"
-
 
 class LinkedList
 {
 public:
 	LinkedList();
 	~LinkedList();
+
+	LinkedList(const LinkedList& indata);
+	LinkedList& operator=(const LinkedList& indata);
+
 	void Clear();
 
 public:
 	void PushBack(int num);
-	///void Insert();
-	///void Modify();
-	///void Delete(int index);
+	void Insert(int index, int num);
+	void Modify(int index, int num);
+	void Delete(int index);
 
 	void Print();
 	void Print(int index);
