@@ -182,25 +182,17 @@ void DoubleLinkedList::Delete(int index)
 			{
 				if (count == 1) //제일앞에 삭제할 때
 				{
-					Node* temp;
-
-					temp->next = iter;
-
-					m_header = temp;
-
-					temp->num = num;
-					temp->prev = nullptr;
+					m_header = iter->next;
+					iter->num = NULL;
+					delete iter;
+					iter = nullptr;
 				}
-				else if (count == m_length) //끝에 추가 할때
+				else if (count == m_length) //끝에 삭제 할때
 				{
-					Node* temp;
-
-					temp->prev = iter;
-					temp->num = num;
-					temp->next = nullptr;
+					
 
 				}
-				else if (count > m_length) //중간에 추가할때
+				else if (count > m_length) //중간에 삭재할때
 				{
 					Node* temp;
 
